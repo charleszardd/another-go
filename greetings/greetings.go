@@ -36,7 +36,7 @@ func GreetToMultipleUser(names []string) (map[string]string, error) {
 	messages := make(map[string]string)
 
 	for _, name := range names {
-		message, _, _, error := Greet(name, 12)
+		message, _, _, error := Greet(name, 34)
 
 		if error != nil {
 			return nil, error
