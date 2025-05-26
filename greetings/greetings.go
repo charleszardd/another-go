@@ -32,6 +32,21 @@ func Greet(name string, age int) (string, int, bool, error) {
 
 }
 
+func GreetToMultipleUser(names []string) (map[string]string, error) {
+	messages := make(map[string]string)
+
+	for _, name := range names {
+		message, _, _, error := Greet(name, 12)
+
+		if error != nil {
+			return nil, error
+		}
+
+		messages[name] =  message
+	}
+	return messages, nil
+}
+
 func randomMessage() string {
 	formats := []string{
 		"Hi, %s, %s",
